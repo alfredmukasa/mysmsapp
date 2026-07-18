@@ -29,7 +29,7 @@ const VideoDownload = () => {
   const fetchVideoInfo = async (videoUrl) => {
     setLoading(true);
     try {
-      const response = await axios.post(`${API_BASE_URL}/api-video-info`, { url: videoUrl });
+      const response = await axios.post(`${API_BASE_URL}/api/video-info`, { url: videoUrl });
       setVideoInfo(response.data);
       setSelectedQuality(response.data.qualities[0]);
     } catch (error) {
