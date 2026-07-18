@@ -49,7 +49,8 @@ const Header = () => {
             left: 0;
             right: 0;
             height: 64px;
-            background: #ffffff;
+            background: #161b22;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
             z-index: 1000;
           }
@@ -63,9 +64,9 @@ const Header = () => {
           }
 
           .main-site-header.scrolled {
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(14, 17, 22, 0.9);
             backdrop-filter: blur(10px);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
           }
 
           .main-header-content {
@@ -100,26 +101,27 @@ const Header = () => {
             display: flex;
             align-items: center;
             padding: 0.5rem 0.75rem;
-            color: #4a5568;
+            color: #9aa4b2;
             text-decoration: none;
             border-radius: 8px;
             transition: all 0.2s ease;
           }
 
           .main-nav-link:hover {
-            background: #f7fafc;
-            color: #2b6cb0;
+            background: rgba(255, 255, 255, 0.06);
+            color: #22c55e;
           }
 
           .main-nav-link.active {
-            background: #ebf8ff;
-            color: #2b6cb0;
+            background: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
           }
 
           .main-login-button {
             padding: 0.5rem 1rem;
-            background: #4299e1;
-            color: white;
+            background: #22c55e;
+            color: #08130b;
+            font-weight: 600;
             border-radius: 8px;
             border: none;
             display: flex;
@@ -129,7 +131,7 @@ const Header = () => {
           }
 
           .main-login-button:hover {
-            background: #3182ce;
+            background: #16a34a;
           }
 
           .main-menu-button {
@@ -137,7 +139,7 @@ const Header = () => {
             background: none;
             border: none;
             padding: 0.5rem;
-            color: #4a5568;
+            color: #e6edf3;
           }
 
           .main-mobile-menu {
@@ -146,7 +148,7 @@ const Header = () => {
             left: 0;
             right: 0;
             bottom: 0;
-            background: white;
+            background: #0e1116;
             padding: 1rem;
             z-index: 999;
             transform: translateX(100%);
@@ -161,7 +163,7 @@ const Header = () => {
             display: flex;
             align-items: center;
             padding: 1rem;
-            color: #4a5568;
+            color: #cdd6e6;
             text-decoration: none;
             border-radius: 12px;
             margin-bottom: 0.5rem;
@@ -169,12 +171,12 @@ const Header = () => {
           }
 
           .main-mobile-nav-link:hover {
-            background: #f7fafc;
+            background: rgba(255, 255, 255, 0.06);
           }
 
           .main-mobile-nav-link.active {
-            background: #ebf8ff;
-            color: #2b6cb0;
+            background: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
           }
 
           @media (max-width: 1024px) {

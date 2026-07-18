@@ -151,8 +151,8 @@ const ImageToTextConverter = () => {
         <ToastContainer />
         
         <Card className="shadow-lg border-0 rounded-4">
-          <Card.Header className="bg-gradient text-primary text-center py-4" 
-            style={{ background: 'linear-gradient(135deg, #4a90e2 0%, #2c5282 100%)' }}>
+          <Card.Header className="text-primary text-center py-4"
+            style={{ background: '#1c232d' }}>
             <div className="d-flex justify-content-center align-items-center">
               <FileTextIcon className="me-3" size={30} />
               <h2 className="mb-0 lead display-4 ">Image to Text Converter</h2>
@@ -254,7 +254,7 @@ const ImageToTextConverter = () => {
               onClick={handleImageUpload} 
               disabled={!image || loading}
               className="w-100 py-3 mt-3 mb-4"
-              style={{ background: 'linear-gradient(135deg, #4a90e2 0%, #2c5282 100%)', border: 'none' }}
+              style={{ border: 'none' }}
             >
               {loading ? (
                 <>
@@ -298,13 +298,14 @@ const ImageToTextConverter = () => {
                   </div>
                 </div>
                 <pre 
-                  className="bg-light p-4 border rounded-3" 
+                  className="p-4 border rounded-3" 
                   style={{ 
                     whiteSpace: "pre-wrap", 
                     maxHeight: "300px", 
                     overflowY: "auto",
                     fontSize: "0.95rem",
-                    backgroundColor: "#f8f9fa"
+                    backgroundColor: "#1c232d",
+                    color: "#e6edf3"
                   }}
                 >
                   {text}

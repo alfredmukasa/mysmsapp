@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';  // Import Bootstrap CSS
 import './index.css';  // Import your custom CSS file, which includes Tailwind CSS
 import App from './App.tsx';  // Your App component
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import './Styles/dark-theme.css';  // App-wide dark theme (must load last)
 //import './App.css'; // Add CSS for modern styling
 
 

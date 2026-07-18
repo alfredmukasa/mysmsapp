@@ -69,11 +69,8 @@ const HomePage = () => {
           min-height: 100vh;
           display: flex;
           flex-direction: column;
-          background:
-            radial-gradient(1000px 500px at 15% -10%, rgba(66, 153, 225, 0.18), transparent 60%),
-            radial-gradient(900px 500px at 100% 0%, rgba(147, 51, 234, 0.16), transparent 55%),
-            #0b1020;
-          color: #e7ecf5;
+          background: #0e1116;
+          color: #e6edf3;
         }
 
         /* Navbar */
@@ -82,8 +79,8 @@ const HomePage = () => {
           top: 0;
           z-index: 1000;
           backdrop-filter: blur(12px);
-          background: rgba(11, 16, 32, 0.72);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          background: rgba(14, 17, 22, 0.85);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         .home-nav-inner {
           max-width: 1200px;
@@ -94,7 +91,14 @@ const HomePage = () => {
           justify-content: space-between;
           gap: 1rem;
         }
-        .home-logo { height: 40px; width: auto; object-fit: contain; }
+        .home-logo {
+          height: 40px;
+          width: auto;
+          object-fit: contain;
+          background: #ffffff;
+          border-radius: 8px;
+          padding: 4px 6px;
+        }
         .home-nav-links { display: flex; align-items: center; gap: 0.25rem; }
         .home-nav-link {
           display: inline-flex;
@@ -102,13 +106,13 @@ const HomePage = () => {
           gap: 0.4rem;
           padding: 0.5rem 0.75rem;
           border-radius: 10px;
-          color: #b7c2d6;
+          color: #9aa4b2;
           text-decoration: none;
           font-size: 0.95rem;
           transition: background 0.2s ease, color 0.2s ease;
         }
         .home-nav-link:hover { background: rgba(255, 255, 255, 0.06); color: #ffffff; }
-        .home-nav-link.active { background: rgba(66, 153, 225, 0.18); color: #7db8ff; }
+        .home-nav-link.active { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
         .home-login-btn {
           display: inline-flex;
           align-items: center;
@@ -116,24 +120,24 @@ const HomePage = () => {
           padding: 0.5rem 1rem;
           border: none;
           border-radius: 10px;
-          color: #fff;
-          font-weight: 600;
-          background: linear-gradient(135deg, #4299e1, #7c3aed);
-          transition: transform 0.15s ease, box-shadow 0.2s ease;
+          color: #08130b;
+          font-weight: 700;
+          background: #22c55e;
+          transition: background 0.2s ease, transform 0.15s ease;
         }
-        .home-login-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(66, 153, 225, 0.35); }
+        .home-login-btn:hover { background: #16a34a; transform: translateY(-1px); }
         .home-menu-btn {
           display: none;
           background: none;
-          border: 1px solid rgba(255,255,255,0.12);
+          border: 1px solid rgba(255,255,255,0.14);
           border-radius: 10px;
           padding: 0.4rem;
-          color: #e7ecf5;
+          color: #e6edf3;
         }
         .home-mobile-menu {
           overflow: hidden;
-          border-bottom: 1px solid rgba(255,255,255,0.08);
-          background: rgba(11, 16, 32, 0.95);
+          border-bottom: 1px solid rgba(255,255,255,0.1);
+          background: rgba(14, 17, 22, 0.98);
         }
         .home-mobile-link {
           display: flex;
@@ -145,7 +149,7 @@ const HomePage = () => {
           border-radius: 12px;
         }
         .home-mobile-link:hover { background: rgba(255,255,255,0.06); color: #fff; }
-        .home-mobile-link.active { color: #7db8ff; }
+        .home-mobile-link.active { color: #22c55e; }
 
         /* Hero */
         .home-hero { text-align: center; padding: 4.5rem 1rem 2.5rem; max-width: 860px; margin: 0 auto; }
@@ -154,9 +158,9 @@ const HomePage = () => {
           align-items: center;
           gap: 0.4rem;
           font-size: 0.8rem;
-          color: #9fd0ff;
-          background: rgba(66, 153, 225, 0.12);
-          border: 1px solid rgba(66, 153, 225, 0.3);
+          color: #22c55e;
+          background: rgba(34, 197, 94, 0.12);
+          border: 1px solid rgba(34, 197, 94, 0.35);
           padding: 0.35rem 0.8rem;
           border-radius: 999px;
           margin-bottom: 1.25rem;
@@ -166,66 +170,64 @@ const HomePage = () => {
           font-size: clamp(2.1rem, 6vw, 3.6rem);
           line-height: 1.1;
           margin-bottom: 1rem;
-          background: linear-gradient(120deg, #ffffff 30%, #7db8ff 70%, #b794f4 100%);
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
+          color: #f3f7fb;
         }
-        .home-subtitle { color: #a9b4c9; font-size: clamp(1rem, 2.4vw, 1.2rem); margin-bottom: 1.75rem; }
+        .home-title .accent { color: #22c55e; }
+        .home-subtitle { color: #9aa4b2; font-size: clamp(1rem, 2.4vw, 1.2rem); margin-bottom: 1.75rem; }
         .home-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
         .home-btn-primary {
           display: inline-flex; align-items: center; gap: 0.5rem;
-          padding: 0.8rem 1.4rem; border-radius: 12px; font-weight: 600; text-decoration: none; color: #fff;
-          background: linear-gradient(135deg, #4299e1, #7c3aed);
-          transition: transform 0.15s ease, box-shadow 0.2s ease;
+          padding: 0.8rem 1.4rem; border-radius: 12px; font-weight: 700; text-decoration: none; color: #08130b;
+          background: #22c55e;
+          transition: background 0.2s ease, transform 0.15s ease;
         }
-        .home-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(124, 58, 237, 0.4); color:#fff; }
+        .home-btn-primary:hover { background: #16a34a; transform: translateY(-2px); color: #08130b; }
         .home-btn-ghost {
           display: inline-flex; align-items: center; gap: 0.5rem;
           padding: 0.8rem 1.4rem; border-radius: 12px; font-weight: 600; text-decoration: none;
-          color: #dbe4f3; border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.03);
+          color: #e6edf3; border: 1px solid rgba(255,255,255,0.18); background: transparent;
           transition: background 0.2s ease, transform 0.15s ease;
         }
-        .home-btn-ghost:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); color:#fff; }
+        .home-btn-ghost:hover { background: rgba(255,255,255,0.07); transform: translateY(-2px); color: #fff; }
 
         /* Sections */
         .home-section { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; width: 100%; }
         .home-section-title { text-align: center; font-weight: 700; font-size: clamp(1.4rem, 3.5vw, 2rem); margin-bottom: 0.4rem; }
-        .home-section-sub { text-align: center; color: #93a0b8; margin-bottom: 2rem; }
+        .home-section-sub { text-align: center; color: #9aa4b2; margin-bottom: 2rem; }
 
         .home-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
         .home-card {
           height: 100%;
-          background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-          border: 1px solid rgba(255,255,255,0.08);
+          background: #161b22;
+          border: 1px solid rgba(255,255,255,0.1);
           border-radius: 18px;
           padding: 1.5rem;
           display: flex;
           flex-direction: column;
           transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
-        .home-card:hover { border-color: rgba(125, 184, 255, 0.5); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
+        .home-card:hover { border-color: rgba(34, 197, 94, 0.6); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
         .home-card-icon {
           width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 1rem;
-          background: rgba(66, 153, 225, 0.15); color: #7db8ff;
+          background: rgba(34, 197, 94, 0.15); color: #22c55e;
         }
         .home-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .home-card p { color: #a9b4c9; flex-grow: 1; margin-bottom: 1.25rem; }
+        .home-card p { color: #9aa4b2; flex-grow: 1; margin-bottom: 1.25rem; }
         .home-card-link {
           display: inline-flex; align-items: center; gap: 0.4rem; align-self: flex-start;
           padding: 0.55rem 1rem; border-radius: 10px; text-decoration: none; font-weight: 600;
-          color: #7db8ff; border: 1px solid rgba(125,184,255,0.4); transition: background 0.2s ease, color 0.2s ease;
+          color: #22c55e; border: 1px solid rgba(34,197,94,0.5); transition: background 0.2s ease, color 0.2s ease;
         }
-        .home-card-link:hover { background: rgba(125,184,255,0.15); color: #fff; }
+        .home-card-link:hover { background: #22c55e; color: #08130b; }
 
         .home-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-        .home-feature { display: flex; gap: 0.9rem; align-items: flex-start; padding: 1.1rem; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); }
-        .home-feature-icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(124, 58, 237, 0.15); color: #b794f4; }
+        .home-feature { display: flex; gap: 0.9rem; align-items: flex-start; padding: 1.1rem; border-radius: 14px; background: #161b22; border: 1px solid rgba(255,255,255,0.08); }
+        .home-feature-icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(239, 68, 68, 0.14); color: #ef4444; }
         .home-feature h4 { font-size: 1.02rem; font-weight: 700; margin-bottom: 0.2rem; }
-        .home-feature p { color: #93a0b8; font-size: 0.9rem; margin: 0; }
+        .home-feature p { color: #9aa4b2; font-size: 0.9rem; margin: 0; }
 
         /* Footer */
-        .home-footer { margin-top: auto; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; padding: 1.75rem 1rem; color: #8794ab; }
+        .home-footer { margin-top: auto; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; padding: 1.75rem 1rem; color: #8794ab; }
 
         @media (max-width: 992px) {
           .home-nav-links { display: none; }
@@ -312,7 +314,9 @@ const HomePage = () => {
         <span className="home-badge">
           <Sparkles size={14} /> AI-powered document tools
         </span>
-        <h1 className="home-title">Powerful Document Transformation</h1>
+        <h1 className="home-title">
+          Powerful <span className="accent">Document</span> Transformation
+        </h1>
         <p className="home-subtitle">
           Convert images, extract text, and manage your PDFs — all in one fast, private, and beautifully simple workspace.
         </p>

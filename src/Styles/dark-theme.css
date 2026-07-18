@@ -1,0 +1,241 @@
+/*
+ * App-wide dark theme with flat green (primary/success) and red (danger) accents.
+ * Loaded last so it overrides Bootstrap defaults and legacy component styles.
+ * No gradients — solid fills only.
+ */
+:root,
+[data-bs-theme='dark'] {
+  --app-bg: #0e1116;
+  --app-surface: #161b22;
+  --app-surface-2: #1c232d;
+  --app-border: rgba(255, 255, 255, 0.1);
+  --app-text: #e6edf3;
+  --app-muted: #9aa4b2;
+
+  --app-green: #22c55e;
+  --app-green-hover: #16a34a;
+  --app-red: #ef4444;
+  --app-red-hover: #dc2626;
+
+  /* Recolour Bootstrap primary/link to green */
+  --bs-body-bg: #0e1116;
+  --bs-body-color: #e6edf3;
+  --bs-primary: #22c55e;
+  --bs-primary-rgb: 34, 197, 94;
+  --bs-link-color: #22c55e;
+  --bs-link-color-rgb: 34, 197, 94;
+  --bs-link-hover-color: #16a34a;
+  --bs-border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background-color: var(--app-bg);
+  color: var(--app-text);
+}
+
+/* ---- Absolute utilities that don't adapt to data-bs-theme ---- */
+.bg-white,
+.bg-light {
+  background-color: var(--app-surface) !important;
+  color: var(--app-text) !important;
+}
+.text-dark {
+  color: var(--app-text) !important;
+}
+.text-muted,
+.text-white-50 {
+  color: var(--app-muted) !important;
+}
+
+/* ---- Accent recolouring: green for primary/success/info, red for danger ---- */
+.text-primary,
+.text-success,
+.text-info {
+  color: var(--app-green) !important;
+}
+.text-danger {
+  color: var(--app-red) !important;
+}
+
+.bg-primary,
+.bg-success,
+.bg-info {
+  background-color: var(--app-green) !important;
+  color: #08130b !important;
+}
+.bg-danger {
+  background-color: var(--app-red) !important;
+}
+
+.btn-primary,
+.btn-success,
+.btn-info {
+  --bs-btn-bg: var(--app-green);
+  --bs-btn-border-color: var(--app-green);
+  --bs-btn-color: #08130b;
+  --bs-btn-hover-bg: var(--app-green-hover);
+  --bs-btn-hover-border-color: var(--app-green-hover);
+  --bs-btn-hover-color: #08130b;
+  --bs-btn-active-bg: var(--app-green-hover);
+  --bs-btn-active-border-color: var(--app-green-hover);
+  --bs-btn-disabled-bg: var(--app-green);
+  --bs-btn-disabled-border-color: var(--app-green);
+  --bs-btn-disabled-color: #08130b;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--app-green);
+  --bs-btn-border-color: var(--app-green);
+  --bs-btn-hover-bg: var(--app-green);
+  --bs-btn-hover-border-color: var(--app-green);
+  --bs-btn-hover-color: #08130b;
+  --bs-btn-active-bg: var(--app-green);
+  --bs-btn-active-border-color: var(--app-green);
+  --bs-btn-active-color: #08130b;
+}
+
+.btn-danger,
+.btn-outline-danger {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--app-red);
+  --bs-btn-border-color: var(--app-red);
+  --bs-btn-hover-bg: var(--app-red-hover);
+  --bs-btn-hover-border-color: var(--app-red-hover);
+  --bs-btn-active-bg: var(--app-red-hover);
+  --bs-btn-active-border-color: var(--app-red-hover);
+}
+.btn-outline-danger {
+  --bs-btn-color: var(--app-red);
+  --bs-btn-bg: transparent;
+  --bs-btn-hover-color: #fff;
+}
+
+/* btn-light (e.g. Copy/Download, dropdown toggles) -> dark surface */
+.btn-light {
+  --bs-btn-bg: var(--app-surface-2);
+  --bs-btn-border-color: var(--app-border);
+  --bs-btn-color: var(--app-text);
+  --bs-btn-hover-bg: #262f3b;
+  --bs-btn-hover-border-color: var(--app-border);
+  --bs-btn-hover-color: var(--app-text);
+}
+
+/* ---- Cards / surfaces (legacy global overrides in message CSS force light) ---- */
+.card {
+  background-color: var(--app-surface) !important;
+  color: var(--app-text) !important;
+  border: 1px solid var(--app-border) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+}
+.card-header {
+  background-color: var(--app-surface-2) !important;
+  border-bottom: 1px solid var(--app-border) !important;
+}
+.card-header.bg-primary,
+.card-header.bg-success,
+.card-header.bg-info {
+  background-color: var(--app-green) !important;
+  color: #08130b !important;
+}
+
+/* Form controls, dropdowns, list groups adapt via data-bs-theme, but pin colors */
+.form-control,
+.form-select,
+.input-group-text {
+  background-color: var(--app-surface-2);
+  border-color: var(--app-border);
+  color: var(--app-text);
+}
+.form-control::placeholder {
+  color: var(--app-muted);
+}
+.list-group-item {
+  background-color: var(--app-surface);
+  color: var(--app-text);
+  border-color: var(--app-border);
+}
+.dropdown-menu {
+  --bs-dropdown-bg: var(--app-surface-2);
+  --bs-dropdown-link-color: var(--app-text);
+  --bs-dropdown-link-hover-bg: var(--app-surface);
+  --bs-dropdown-border-color: var(--app-border);
+}
+
+/* ---- Messages feature (messageApp.css / MessageGenerator.css) ---- */
+.message-app {
+  background-color: var(--app-bg) !important;
+}
+.main-container {
+  background: var(--app-surface) !important;
+  border: 1px solid var(--app-border);
+}
+.message-bubble {
+  background: var(--app-surface-2) !important;
+  color: var(--app-text) !important;
+  border-color: var(--app-border) !important;
+}
+.message-bubble::before {
+  background: var(--app-surface-2) !important;
+  border-color: var(--app-border) !important;
+}
+.message-text {
+  color: var(--app-text) !important;
+}
+.category-item {
+  background: var(--app-surface-2) !important;
+  color: var(--app-text) !important;
+}
+.category-item.active {
+  background: rgba(34, 197, 94, 0.15) !important;
+  border-color: var(--app-green) !important;
+  border-left-color: var(--app-green) !important;
+}
+.search-input {
+  background: var(--app-surface-2) !important;
+  color: var(--app-text) !important;
+  box-shadow: none !important;
+  border: 1px solid var(--app-border) !important;
+}
+.search-input::placeholder {
+  color: var(--app-muted) !important;
+}
+.search-icon {
+  color: var(--app-muted) !important;
+}
+.modal-content {
+  background: var(--app-surface) !important;
+  color: var(--app-text) !important;
+  border: 1px solid var(--app-border) !important;
+}
+.accordion-button:not(.collapsed) {
+  background-color: rgba(34, 197, 94, 0.12) !important;
+  color: var(--app-text) !important;
+}
+
+.search-container {
+  background: transparent !important;
+}
+.profile-image {
+  background: var(--app-surface-2) !important;
+  border-color: var(--app-surface) !important;
+}
+.copy-alert {
+  background: rgba(0, 0, 0, 0.85) !important;
+  color: #fff !important;
+}
+.highlight {
+  background-color: rgba(34, 197, 94, 0.25) !important;
+  color: var(--app-text) !important;
+}
+
+/* Custom soft accent circle used on PDF tools */
+.bg-primary-soft {
+  background-color: rgba(34, 197, 94, 0.15) !important;
+}
+
+/* Shared header logo sits on a light chip so it reads on dark */
+.main-site-header img.main-logo-image {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 4px 6px;
+}
