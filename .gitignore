@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# @distube/ytdl-core runtime cache
+*-player-script.js
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
