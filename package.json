@@ -49,7 +49,6 @@
     "react-router-dom": "^7.1.0",
     "react-toastify": "^10.0.6",
     "tesseract.js": "^5.1.1",
-    "twitter-url-direct": "^1.0.9",
     "ytdl-core": "^4.11.5"
   },
   "devDependencies": {
